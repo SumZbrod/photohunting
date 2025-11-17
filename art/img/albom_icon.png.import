@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dl2y3ryku5khi"
-path="res://.godot/imported/trees_tileset.jpg-ddd4fdb13e9ea84ac995ab49987cb62e.ctex"
+uid="uid://c2ur5vubaf7tm"
+path="res://.godot/imported/albom_icon.png-31e455146281f8ae2b13ca142bb489cf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/img/trees_tileset.jpg"
-dest_files=["res://.godot/imported/trees_tileset.jpg-ddd4fdb13e9ea84ac995ab49987cb62e.ctex"]
+source_file="res://art/img/albom_icon.png"
+dest_files=["res://.godot/imported/albom_icon.png-31e455146281f8ae2b13ca142bb489cf.ctex"]
 
 [params]
 

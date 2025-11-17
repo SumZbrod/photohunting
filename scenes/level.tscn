@@ -1,0 +1,128 @@
+[gd_scene load_steps=14 format=3 uid="uid://0tvatg7gtruf"]
+
+[ext_resource type="Texture2D" uid="uid://c40wxiftb8nts" path="res://art/img/bg.png" id="1_2r41h"]
+[ext_resource type="Script" uid="uid://dqud3kp0ahgyb" path="res://scripts/natural.gd" id="2_klq6b"]
+[ext_resource type="Shader" uid="uid://dmd5ywsb31aue" path="res://shader/wiggle.gdshader" id="3_b121j"]
+[ext_resource type="Texture2D" uid="uid://c3w101slnb4df" path="res://art/img/trees_tileset.png" id="4_8c41q"]
+[ext_resource type="PackedScene" uid="uid://daptx2m6lf22r" path="res://scenes/wind.tscn" id="5_olg7q"]
+[ext_resource type="PackedScene" uid="uid://c4xw5crcyabxv" path="res://scenes/cloud.tscn" id="6_t1rx8"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8iemx"]
+shader = ExtResource("3_b121j")
+shader_parameter/speed = 0.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_64w2a"]
+size = Vector2(75.31035, 78)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fpun6"]
+shader = ExtResource("3_b121j")
+shader_parameter/speed = 0.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wc255"]
+size = Vector2(41.565517, 30.960003)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_arp2o"]
+shader = ExtResource("3_b121j")
+shader_parameter/speed = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ux5qa"]
+shader = ExtResource("3_b121j")
+shader_parameter/speed = 0.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2r41h"]
+size = Vector2(32.72, 31.88)
+
+[node name="Level" type="Node2D"]
+
+[node name="BG" type="Sprite2D" parent="."]
+position = Vector2(634, 348)
+texture = ExtResource("1_2r41h")
+
+[node name="natural" type="Node2D" parent="."]
+position = Vector2(400, 900)
+scale = Vector2(3.452381, 4.1666665)
+
+[node name="tree" type="Area2D" parent="natural"]
+position = Vector2(-65.17241, -165.84001)
+collision_layer = 4
+collision_mask = 6
+script = ExtResource("2_klq6b")
+
+[node name="Sprite2D" type="Sprite2D" parent="natural/tree"]
+material = SubResource("ShaderMaterial_8iemx")
+texture = ExtResource("4_8c41q")
+region_enabled = true
+region_rect = Rect2(1.4337769, -2.1823502, 86.92897, 96.863716)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="natural/tree"]
+position = Vector2(0.2896633, -7.080017)
+shape = SubResource("RectangleShape2D_64w2a")
+
+[node name="grass" type="Area2D" parent="natural"]
+position = Vector2(22.303444, -110.16)
+scale = Vector2(0.6, 0.6)
+collision_layer = 4
+collision_mask = 6
+script = ExtResource("2_klq6b")
+
+[node name="Sprite2D" type="Sprite2D" parent="natural/grass"]
+material = SubResource("ShaderMaterial_fpun6")
+texture = ExtResource("4_8c41q")
+region_enabled = true
+region_rect = Rect2(112.06238, 55.356377, 45.32724, 44.085403)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="natural/grass"]
+position = Vector2(-0.94137573, 0.6000061)
+shape = SubResource("RectangleShape2D_wc255")
+
+[node name="grass2" type="Area2D" parent="natural"]
+position = Vector2(-62.855175, -81.84)
+scale = Vector2(0.6, 0.6)
+collision_layer = 4
+collision_mask = 6
+script = ExtResource("2_klq6b")
+
+[node name="Sprite2D" type="Sprite2D" parent="natural/grass2"]
+material = SubResource("ShaderMaterial_arp2o")
+texture = ExtResource("4_8c41q")
+region_enabled = true
+region_rect = Rect2(112.06238, 55.356377, 45.32724, 44.085403)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="natural/grass2"]
+position = Vector2(-0.94137573, 0.6000061)
+shape = SubResource("RectangleShape2D_wc255")
+
+[node name="grass3" type="Area2D" parent="natural"]
+position = Vector2(169.15863, -130.8)
+scale = Vector2(0.6, 0.6)
+collision_layer = 4
+collision_mask = 6
+script = ExtResource("2_klq6b")
+
+[node name="Sprite2D" type="Sprite2D" parent="natural/grass3"]
+material = SubResource("ShaderMaterial_ux5qa")
+texture = ExtResource("4_8c41q")
+region_enabled = true
+region_rect = Rect2(112.06238, 55.356377, 45.32724, 44.085403)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="natural/grass3"]
+position = Vector2(-0.94137573, 0.6000061)
+shape = SubResource("RectangleShape2D_wc255")
+
+[node name="wind" parent="." instance=ExtResource("5_olg7q")]
+
+[node name="clouds" type="Node2D" parent="."]
+position = Vector2(578, 318)
+scale = Vector2(1.2450778, 1.36875)
+
+[node name="Cloud" parent="clouds" instance=ExtResource("6_t1rx8")]
+position = Vector2(-622.45105, 65.022835)
+scale = Vector2(2.34, 2.34)
+speed = 0.05
+
+[node name="Lens" type="Area2D" parent="."]
+position = Vector2(7.0000076, 7.5000076)
+scale = Vector2(25, 25)
+
+[node name="LensCollition" type="CollisionShape2D" parent="Lens"]
+shape = SubResource("RectangleShape2D_2r41h")

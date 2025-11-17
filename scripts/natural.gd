@@ -26,3 +26,6 @@ func maintain_shaking(delta) -> void:
 	speed += delta*acceleration * (1 if is_shaking else -1)
 	speed = clamp(speed, min_speed, max_speed)
 	sprite.material.set_shader_parameter("speed", speed)
+
+func calc_score():
+	return 1 if speed > min_speed else 0
