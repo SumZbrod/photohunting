@@ -1,11 +1,13 @@
-[gd_scene load_steps=14 format=3 uid="uid://0tvatg7gtruf"]
+[gd_scene load_steps=21 format=3 uid="uid://0tvatg7gtruf"]
 
 [ext_resource type="Texture2D" uid="uid://c40wxiftb8nts" path="res://art/img/bg.png" id="1_2r41h"]
+[ext_resource type="Script" uid="uid://bjuoge77tqw6t" path="res://scripts/level.gd" id="1_b121j"]
 [ext_resource type="Script" uid="uid://dqud3kp0ahgyb" path="res://scripts/natural.gd" id="2_klq6b"]
 [ext_resource type="Shader" uid="uid://dmd5ywsb31aue" path="res://shader/wiggle.gdshader" id="3_b121j"]
 [ext_resource type="Texture2D" uid="uid://c3w101slnb4df" path="res://art/img/trees_tileset.png" id="4_8c41q"]
 [ext_resource type="PackedScene" uid="uid://daptx2m6lf22r" path="res://scenes/wind.tscn" id="5_olg7q"]
 [ext_resource type="PackedScene" uid="uid://c4xw5crcyabxv" path="res://scenes/cloud.tscn" id="6_t1rx8"]
+[ext_resource type="PackedScene" uid="uid://diqosm8h11kn" path="res://scenes/bird.tscn" id="7_klq6b"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8iemx"]
 shader = ExtResource("3_b121j")
@@ -32,7 +34,175 @@ shader_parameter/speed = 0.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2r41h"]
 size = Vector2(32.72, 31.88)
 
+[sub_resource type="Animation" id="Animation_8c41q"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Bird:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(205, -236)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Bird:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Bird:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_b121j"]
+resource_name = "crown"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Bird:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 6.566667, 10),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(205, -236), Vector2(554, 431), Vector2(554, 431), Vector2(1239, 161)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Bird:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.29, 2.96, 4.53, 6.52),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 1, 0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Bird:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_klq6b"]
+resource_name = "crown"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Bird:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 6.566667, 10),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(205, -236), Vector2(554, 431), Vector2(554, 431), Vector2(1239, 161)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Bird:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.29, 2.96, 4.53, 6.52),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [3, 4, 5, 4, 3]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Bird:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_olg7q"]
+resource_name = "magpie"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Bird:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 6.566667, 10),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(205, -236), Vector2(554, 431), Vector2(554, 431), Vector2(1239, 161)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Bird:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.29, 2.96, 4.53, 6.5333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [6, 7, 6, 7, 6]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Bird:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_olg7q"]
+_data = {
+&"RESET": SubResource("Animation_8c41q"),
+&"crown": SubResource("Animation_b121j"),
+&"magpie": SubResource("Animation_olg7q"),
+&"seagull": SubResource("Animation_klq6b")
+}
+
 [node name="Level" type="Node2D"]
+script = ExtResource("1_b121j")
 
 [node name="BG" type="Sprite2D" parent="."]
 position = Vector2(634, 348)
@@ -45,7 +215,7 @@ scale = Vector2(3.452381, 4.1666665)
 [node name="tree" type="Area2D" parent="natural"]
 position = Vector2(-65.17241, -165.84001)
 collision_layer = 4
-collision_mask = 6
+collision_mask = 2
 script = ExtResource("2_klq6b")
 
 [node name="Sprite2D" type="Sprite2D" parent="natural/tree"]
@@ -62,7 +232,7 @@ shape = SubResource("RectangleShape2D_64w2a")
 position = Vector2(22.303444, -110.16)
 scale = Vector2(0.6, 0.6)
 collision_layer = 4
-collision_mask = 6
+collision_mask = 2
 script = ExtResource("2_klq6b")
 
 [node name="Sprite2D" type="Sprite2D" parent="natural/grass"]
@@ -79,7 +249,7 @@ shape = SubResource("RectangleShape2D_wc255")
 position = Vector2(-62.855175, -81.84)
 scale = Vector2(0.6, 0.6)
 collision_layer = 4
-collision_mask = 6
+collision_mask = 2
 script = ExtResource("2_klq6b")
 
 [node name="Sprite2D" type="Sprite2D" parent="natural/grass2"]
@@ -96,7 +266,7 @@ shape = SubResource("RectangleShape2D_wc255")
 position = Vector2(169.15863, -130.8)
 scale = Vector2(0.6, 0.6)
 collision_layer = 4
-collision_mask = 6
+collision_mask = 2
 script = ExtResource("2_klq6b")
 
 [node name="Sprite2D" type="Sprite2D" parent="natural/grass3"]
@@ -123,6 +293,18 @@ speed = 0.05
 [node name="Lens" type="Area2D" parent="."]
 position = Vector2(7.0000076, 7.5000076)
 scale = Vector2(25, 25)
+collision_layer = 0
+collision_mask = 4
 
 [node name="LensCollition" type="CollisionShape2D" parent="Lens"]
 shape = SubResource("RectangleShape2D_2r41h")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_olg7q")
+}
+
+[node name="Bird" parent="." instance=ExtResource("7_klq6b")]
+visible = false
+position = Vector2(205, -236)
+frame_progress = 0.0

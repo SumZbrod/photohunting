@@ -1,14 +1,11 @@
 class_name BirdClass extends AnimatedSprite2D
 
-enum Frames {FLY, STAND, SPACIAL}
+var frame_score := [
+	# fly	# stand	# spatial
+	1, 		2, 		3, 		# crown 
+	2, 		3, 		4, 		# seagull
+	3, 		4, 		5, 		# magpie 
+]
 
-func set_flying():
-	frame = Frames.FLY
-	
-func set_stand():
-	frame = Frames.STAND
-	
-func set_spatial():
-	if frame == Frames.STAND:
-		frame = Frames.SPACIAL
-		
+func calc_score():
+	return frame_score[frame]

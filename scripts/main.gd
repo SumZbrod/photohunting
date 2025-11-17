@@ -21,7 +21,7 @@ func _physics_process(_delta: float) -> void:
 
 func maintain_input():
 	if Input.is_action_just_pressed('ui_text_indent'):
-		photocamera.visible = !photocamera.visible
+		photocamera.make_vidible()
 
 func maintain_move_camera() -> void:
 	if !photocamera.visible:

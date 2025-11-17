@@ -7,3 +7,6 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	maintai_velocity(delta, Vector2(1, -.3))
+
+func calc_score():
+	return -1
