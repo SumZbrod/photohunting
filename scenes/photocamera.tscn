@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://6xhgb3pq6pt6"]
+
+[ext_resource type="Script" uid="uid://dpk4g6o1etkk4" path="res://scripts/photocamera.gd" id="1_tsonm"]
+[ext_resource type="Texture2D" uid="uid://n6rj2dmwtxfv" path="res://art/img/photo_camera_ui.png" id="2_8l1pf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i5m8k"]
+size = Vector2(32.72, 31.88)
+
+[node name="Photocamera" type="Area2D"]
+script = ExtResource("1_tsonm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(7.0000076, 7.5000076)
+scale = Vector2(25, 25)
+shape = SubResource("RectangleShape2D_i5m8k")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_8l1pf")

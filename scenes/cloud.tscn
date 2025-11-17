@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://c4xw5crcyabxv"]
+
+[ext_resource type="Script" uid="uid://dymxek45gxyhm" path="res://scripts/cloud.gd" id="1_2kyfr"]
+[ext_resource type="Texture2D" uid="uid://c3w101slnb4df" path="res://art/img/trees_tileset.png" id="1_vlwrh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2kyfr"]
+size = Vector2(179, 51)
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_2kyfr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_vlwrh")
+region_enabled = true
+region_rect = Rect2(185.28412, 9.621895, 194.96933, 90.654526)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-4.5, 5)
+shape = SubResource("RectangleShape2D_2kyfr")

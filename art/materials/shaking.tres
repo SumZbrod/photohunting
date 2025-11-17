@@ -1,0 +1,7 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://blthlpmd2bu4c"]
+
+[ext_resource type="Shader" uid="uid://dmd5ywsb31aue" path="res://shader/wiggle.gdshader" id="1_oyidm"]
+
+[resource]
+shader = ExtResource("1_oyidm")
+shader_parameter/speed = 0.0
